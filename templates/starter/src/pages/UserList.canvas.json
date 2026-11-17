@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "nodes": [
+    {
+      "id": "ul-root",
+      "component": "src/components/stack/Stack.tsx#Stack",
+      "props": {
+        "gap": "large"
+      },
+      "children": [
+        {
+          "id": "ul-header",
+          "component": "src/components/page-header/PageHeader.tsx#PageHeader",
+          "props": {
+            "title": "ユーザー一覧",
+            "description": "チームのメンバーと権限を管理します"
+          },
+          "children": [
+            {
+              "id": "ul-invite",
+              "component": "src/components/button/Button.tsx#Button",
+              "props": {
+                "variant": "solid",
+                "children": "ユーザーを招待"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "ul-alert",
+          "component": "src/components/alert/Alert.tsx#Alert",
+          "props": {
+            "tone": "warning",
+            "title": "承認待ちの招待が 2 件あります",
+            "children": "招待メールの有効期限は 7 日間です。"
+          },
+          "children": []
+        },
+        {
+          "id": "ul-filters",
+          "component": "src/components/stack/Stack.tsx#Stack",
+          "props": {
+            "direction": "row",
+            "gap": "small",
+            "align": "center"
+          },
+          "children": [
+            {
+              "id": "ul-tag-all",
+              "component": "src/components/tag/Tag.tsx#Tag",
+              "props": {
+                "label": "すべて"
+              },
+              "children": []
+            },
+            {
+              "id": "ul-tag-admin",
+              "component": "src/components/tag/Tag.tsx#Tag",
+              "props": {
+                "label": "管理者"
+              },
+              "children": []
+            },
+            {
+              "id": "ul-tag-member",
+              "component": "src/components/tag/Tag.tsx#Tag",
+              "props": {
+                "label": "メンバー"
+              },
+              "children": []
+            },
+            {
+              "id": "ul-tag-inactive",
+              "component": "src/components/tag/Tag.tsx#Tag",
+              "props": {
+                "label": "停止中"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "ul-card",
+          "component": "src/components/card/Card.tsx#Card",
+          "props": {
+            "title": "メンバー"
+          },
+          "children": [
+            {
+              "id": "ul-table",
+              "component": "src/components/user-table/UserTable.tsx#UserTable",
+              "props": {
+                "users": "[\n  {\n    \"id\": 1,\n    \"name\": \"佐藤 美咲\",\n    \"role\": \"admin\",\n    \"active\": true\n  },\n  {\n    \"id\": 2,\n    \"name\": \"田中 健\",\n    \"role\": \"member\",\n    \"active\": true\n  },\n  {\n    \"id\": 3,\n    \"name\": \"鈴木 陽子\",\n    \"role\": \"member\",\n    \"active\": true\n  },\n  {\n    \"id\": 4,\n    \"name\": \"高橋 翔\",\n    \"role\": \"member\",\n    \"active\": false\n  },\n  {\n    \"id\": 5,\n    \"name\": \"伊藤 さくら\",\n    \"role\": \"admin\",\n    \"active\": true\n  }\n]"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

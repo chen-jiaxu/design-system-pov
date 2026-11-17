@@ -1,0 +1,32 @@
+.app-stat {
+  background: var(--app-color-surface);
+  border: 1px solid var(--app-color-border);
+  border-radius: var(--app-radius);
+  box-sizing: border-box;
+  color: var(--app-color-text);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--app-font-family, system-ui, sans-serif);
+  font-size: var(--app-font-size, 14px);
+  gap: 4px;
+  min-width: 0;
+  padding: calc(var(--app-space) * 1.5);
+}
+.app-stat-label {
+  color: var(--app-color-text-muted, #52525b);
+}
+.app-stat-value {
+  font-size: calc(var(--app-font-size, 14px) + 10px);
+  font-variant-numeric: tabular-nums;
+}
+.app-stat-change {
+  color: var(--app-color-text-muted, #52525b);
+  font-size: 12px;
+  font-weight: 600;
+}
+.app-stat-change[data-trend="up"] {
+  color: var(--app-color-success);
+}
+.app-stat-change[data-trend="down"] {
+  color: var(--app-color-warning);
+}

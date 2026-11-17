@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "nodes": [
+    {
+      "id": "db-root",
+      "component": "src/components/stack/Stack.tsx#Stack",
+      "props": {
+        "gap": "large"
+      },
+      "children": [
+        {
+          "id": "db-header",
+          "component": "src/components/page-header/PageHeader.tsx#PageHeader",
+          "props": {
+            "title": "ダッシュボード",
+            "description": "今月の主要な指標"
+          },
+          "children": [
+            {
+              "id": "db-export",
+              "component": "src/components/button/Button.tsx#Button",
+              "props": {
+                "variant": "outline",
+                "children": "CSV を書き出す"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "db-stats",
+          "component": "src/components/stack/Stack.tsx#Stack",
+          "props": {
+            "direction": "row",
+            "wrap": true
+          },
+          "children": [
+            {
+              "id": "db-sales",
+              "component": "src/components/stat/Stat.tsx#Stat",
+              "props": {
+                "label": "今月の売上",
+                "value": "¥12,480,000",
+                "change": "+8.2%",
+                "trend": "up"
+              },
+              "children": []
+            },
+            {
+              "id": "db-new",
+              "component": "src/components/stat/Stat.tsx#Stat",
+              "props": {
+                "label": "新規ユーザー",
+                "value": "1,284",
+                "change": "+3.1%",
+                "trend": "up"
+              },
+              "children": []
+            },
+            {
+              "id": "db-churn",
+              "component": "src/components/stat/Stat.tsx#Stat",
+              "props": {
+                "label": "解約率",
+                "value": "2.4%",
+                "change": "+0.3pt",
+                "trend": "down"
+              },
+              "children": []
+            },
+            {
+              "id": "db-response",
+              "component": "src/components/stat/Stat.tsx#Stat",
+              "props": {
+                "label": "平均応答時間",
+                "value": "1.8 秒",
+                "change": "±0",
+                "trend": "flat"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "db-row",
+          "component": "src/components/stack/Stack.tsx#Stack",
+          "props": {
+            "direction": "row",
+            "wrap": true
+          },
+          "children": [
+            {
+              "id": "db-news",
+              "component": "src/components/card/Card.tsx#Card",
+              "props": {
+                "title": "お知らせ"
+              },
+              "children": [
+                {
+                  "id": "db-news-1",
+                  "component": "src/components/alert/Alert.tsx#Alert",
+                  "props": {
+                    "tone": "success",
+                    "title": "新しいレポートを追加しました",
+                    "children": "「設定 → レポート」から有効にできます。"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "db-news-2",
+                  "component": "src/components/alert/Alert.tsx#Alert",
+                  "props": {
+                    "tone": "warning",
+                    "title": "お支払い情報の更新が必要です",
+                    "children": "登録中のカードの有効期限が近づいています。"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "db-members",
+              "component": "src/components/card/Card.tsx#Card",
+              "props": {
+                "title": "最近追加されたメンバー"
+              },
+              "children": [
+                {
+                  "id": "db-table",
+                  "component": "src/components/user-table/UserTable.tsx#UserTable",
+                  "props": {
+                    "users": "[\n  {\n    \"id\": 1,\n    \"name\": \"伊藤 さくら\",\n    \"role\": \"admin\",\n    \"active\": true\n  },\n  {\n    \"id\": 2,\n    \"name\": \"高橋 翔\",\n    \"role\": \"member\",\n    \"active\": false\n  },\n  {\n    \"id\": 3,\n    \"name\": \"鈴木 陽子\",\n    \"role\": \"member\",\n    \"active\": true\n  }\n]"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

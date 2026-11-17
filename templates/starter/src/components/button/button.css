@@ -1,0 +1,34 @@
+.app-button {
+  /* 组件内部用的变量，不是 design token */
+  --_bg: transparent;
+  align-items: center;
+  background: var(--_bg);
+  border: 1px solid transparent;
+  border-radius: var(--app-radius);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: var(--app-font-family, system-ui, sans-serif);
+  font-size: var(--app-font-size, 14px);
+  font-weight: 600;
+  height: 32px;
+  padding: 0 var(--app-space);
+  transition: background var(--app-duration);
+  white-space: nowrap;
+}
+.app-button[data-size="large"] {
+  font-size: calc(var(--app-font-size, 14px) + 2px);
+  height: 40px;
+  padding: 0 calc(var(--app-space) * 1.5);
+}
+.app-button[data-variant="solid"] {
+  --_bg: var(--app-color-primary);
+  color: var(--app-color-on-primary);
+}
+.app-button[data-variant="outline"] {
+  border-color: var(--app-color-border);
+  color: var(--app-color-text);
+}
+.app-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}

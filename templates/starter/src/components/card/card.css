@@ -1,0 +1,21 @@
+.app-card {
+  background: var(--app-color-surface);
+  border: 1px solid var(--app-color-border);
+  border-radius: var(--app-radius);
+  box-sizing: border-box;
+  color: var(--app-color-text);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--app-font-family, system-ui, sans-serif);
+  font-size: var(--app-font-size, 14px);
+  gap: var(--app-space);
+  padding: calc(var(--app-space) * 1.5);
+}
+.app-card[data-elevated] {
+  border-color: transparent;
+  box-shadow: var(--app-shadow, 0 1px 3px rgb(0 0 0 / 0.12));
+}
+.app-card-title {
+  font-size: calc(var(--app-font-size, 14px) + 2px);
+  margin: 0;
+}

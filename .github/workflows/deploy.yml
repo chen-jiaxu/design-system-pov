@@ -1,0 +1,52 @@
+# main に push したとき（または Actions 画面から手動実行したとき）、テスト・ビルドして GitHub Pages に公開する。
+# 最初の 1 回だけ、リポジトリの Settings → Pages → Source を "GitHub Actions" にしておく。
+# 公開パスは既定で /リポジトリ名/（chen-jiaxu/design-system-pov なら /design-system-pov/）。
+# 独自ドメインなどで変えるときは Settings → Secrets and variables → Actions → Variables に VITE_BASE を作る。
+# プロダクト名も同じく変数 VITE_APP_NAME で変えられる。
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 公開は 1 つずつ。新しい push が来たら、まだ終わっていない古い公開は止める
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      # build の中で型チェックもする
+      - run: npm run build
+        env:
+          VITE_BASE: ${{ vars.VITE_BASE || format('/{0}/', github.event.repository.name) }}
+          VITE_APP_NAME: ${{ vars.VITE_APP_NAME || 'Design System POV' }}
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

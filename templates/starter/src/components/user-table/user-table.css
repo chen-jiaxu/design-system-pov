@@ -1,0 +1,32 @@
+.app-user-table {
+  border-collapse: collapse;
+  color: var(--app-color-text);
+  font-family: var(--app-font-family, system-ui, sans-serif);
+  font-size: var(--app-font-size, 14px);
+  width: 100%;
+}
+.app-user-table caption {
+  color: var(--app-color-text-muted, #52525b);
+  padding-bottom: calc(var(--app-space) / 2);
+  text-align: left;
+}
+.app-user-table th,
+.app-user-table td {
+  border-bottom: 1px solid var(--app-color-border);
+  padding: calc(var(--app-space) / 2) var(--app-space);
+  text-align: left;
+}
+.app-user-table th {
+  color: var(--app-color-text-muted, #52525b);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.app-user-table td {
+  word-break: keep-all;
+}
+.app-user-table-status {
+  color: var(--app-color-text-muted, #52525b);
+}
+.app-user-table-status[data-active] {
+  color: var(--app-color-success);
+}

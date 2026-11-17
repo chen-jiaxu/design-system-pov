@@ -1,0 +1,30 @@
+.app-tag {
+  align-items: center;
+  border: 1px solid var(--app-color-border);
+  border-radius: 26px;
+  color: var(--app-color-text);
+  display: inline-flex;
+  font-family: var(--app-font-family, system-ui, sans-serif);
+  font-size: var(--app-font-size, 14px);
+  gap: 4px;
+  height: 26px;
+  padding: 0 calc(var(--app-space) * 0.75);
+}
+
+.app-tag[data-size="sm"] {
+  border-radius: 20px;
+  font-size: 12px;
+  height: 20px;
+}
+
+.app-tag__remove {
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+.app-tag__remove:hover {
+  color: var(--app-color-primary);
+}

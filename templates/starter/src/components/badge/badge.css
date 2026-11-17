@@ -1,0 +1,17 @@
+.app-badge {
+  align-items: center;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  display: inline-flex;
+  font-family: var(--app-font-family, system-ui, sans-serif);
+  font-size: 12px;
+  font-weight: 600;
+  gap: 4px;
+  padding: 0 8px;
+}
+.app-badge[data-tone="success"] {
+  color: var(--app-color-success);
+}
+.app-badge[data-tone="warning"] {
+  color: var(--app-color-warning);
+}

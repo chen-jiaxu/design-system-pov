@@ -1,0 +1,135 @@
+{
+  "version": 1,
+  "nodes": [
+    {
+      "id": "as-root",
+      "component": "src/components/stack/Stack.tsx#Stack",
+      "props": {
+        "gap": "large"
+      },
+      "children": [
+        {
+          "id": "as-header",
+          "component": "src/components/page-header/PageHeader.tsx#PageHeader",
+          "props": {
+            "title": "アカウント設定",
+            "description": "プロフィールとパスワードを変更できます"
+          },
+          "children": []
+        },
+        {
+          "id": "as-profile",
+          "component": "src/components/card/Card.tsx#Card",
+          "props": {
+            "title": "プロフィール"
+          },
+          "children": [
+            {
+              "id": "as-name-row",
+              "component": "src/components/stack/Stack.tsx#Stack",
+              "props": {
+                "direction": "row"
+              },
+              "children": [
+                {
+                  "id": "as-name",
+                  "component": "src/components/text-field/TextField.tsx#TextField",
+                  "props": {
+                    "label": "氏名",
+                    "placeholder": "山田 太郎",
+                    "required": true
+                  },
+                  "children": []
+                },
+                {
+                  "id": "as-display",
+                  "component": "src/components/text-field/TextField.tsx#TextField",
+                  "props": {
+                    "label": "表示名",
+                    "placeholder": "やまだ"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "as-email",
+              "component": "src/components/text-field/TextField.tsx#TextField",
+              "props": {
+                "label": "メールアドレス",
+                "placeholder": "name@example.com",
+                "hint": "ログインと通知に使います",
+                "required": true
+              },
+              "children": []
+            },
+            {
+              "id": "as-dept",
+              "component": "src/components/text-field/TextField.tsx#TextField",
+              "props": {
+                "label": "部署",
+                "placeholder": "プロダクト開発部"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "as-password",
+          "component": "src/components/card/Card.tsx#Card",
+          "props": {
+            "title": "パスワード"
+          },
+          "children": [
+            {
+              "id": "as-current",
+              "component": "src/components/text-field/TextField.tsx#TextField",
+              "props": {
+                "label": "現在のパスワード"
+              },
+              "children": []
+            },
+            {
+              "id": "as-new",
+              "component": "src/components/text-field/TextField.tsx#TextField",
+              "props": {
+                "label": "新しいパスワード",
+                "error": "8 文字以上にしてください"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "as-actions",
+          "component": "src/components/stack/Stack.tsx#Stack",
+          "props": {
+            "direction": "row",
+            "gap": "small",
+            "align": "center"
+          },
+          "children": [
+            {
+              "id": "as-save",
+              "component": "src/components/button/Button.tsx#Button",
+              "props": {
+                "variant": "solid",
+                "children": "保存する"
+              },
+              "children": []
+            },
+            {
+              "id": "as-cancel",
+              "component": "src/components/button/Button.tsx#Button",
+              "props": {
+                "variant": "outline",
+                "children": "キャンセル"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+:root {
+  --app-color-primary: #0f766e;
+  --app-color-on-primary: #ffffff;
+  --app-color-surface: #ffffff;
+  --app-color-background: #f4f4f5;
+  --app-color-border: #d4d4d8;
+  --app-color-text: #18181b;
+  --app-color-text-muted: #52525b;
+  --app-color-success: #15803d;
+  --app-color-warning: #b45309;
+  --app-font-family: system-ui, -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif;
+  --app-font-size: 14px;
+  --app-radius: 8px;
+  --app-space: 12px;
+  --app-shadow: 0 1px 3px rgb(0 0 0 / 0.12);
+  --app-duration: 120ms;
+}

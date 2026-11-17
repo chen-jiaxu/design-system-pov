@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>preview</title>
+    <style>
+      html, body { margin: 0; min-height: 100%; }
+      body { box-sizing: border-box; display: grid; min-height: 100vh; padding: 24px; place-items: center; }
+      .dsp-error { color: #8a4b00; font: 12px/1.6 system-ui, sans-serif; margin: 0; white-space: pre-wrap; }
+      /* 画布：从上往下排，左对齐（和生成的页面代码一样） */
+      body.dsp-canvas-mode { display: block; padding: 0; place-items: normal; }
+      .dsp-canvas { align-items: flex-start; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px; min-height: 100vh; padding: 24px; }
+      /* 变体一览：每个 prop 一行，格子下面写值 */
+      .dsp-variants { display: flex; flex-direction: column; gap: 24px; max-width: 100%; }
+      .dsp-variants-empty { color: #71717a; font: 13px/1.6 system-ui, sans-serif; margin: 0; }
+      .dsp-variant-label { border-bottom: 1px solid #e4e4e7; color: #52525b; font: 600 12px/1.6 ui-monospace, monospace; margin: 0 0 12px; padding-bottom: 4px; }
+      .dsp-variant-row { align-items: flex-end; display: flex; flex-wrap: wrap; gap: 16px 24px; }
+      .dsp-variant { align-items: flex-start; display: flex; flex-direction: column; gap: 6px; margin: 0; }
+      .dsp-variant > figcaption { color: #71717a; font: 11px/1.4 ui-monospace, monospace; }
+      .dsp-canvas-empty { align-self: stretch; border: 2px dashed #d4d4d8; border-radius: 8px; color: #71717a; font: 13px/1.6 system-ui, sans-serif; margin: 0; padding: 48px 16px; text-align: center; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/preview/main.ts"></script>
+  </body>
+</html>
